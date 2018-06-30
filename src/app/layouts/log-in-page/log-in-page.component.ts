@@ -9,7 +9,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class LogInPageComponent implements OnInit {
 
   public loginForm : FormGroup;
-  public hide = true;
+  public hide : boolean = true;
+  public popDiolog : boolean = true;
   constructor(private formBuilder : FormBuilder) { }
 
   ngOnInit()
@@ -24,5 +25,18 @@ export class LogInPageComponent implements OnInit {
           password : ['']
       });
   }
+
+  toggleDialog()
+  {
+      if(this.popDiolog == false)
+      {
+          this.popDiolog = true;
+      }
+      else
+      {
+        this.popDiolog = false;
+      }
+  }
+  
 
 }

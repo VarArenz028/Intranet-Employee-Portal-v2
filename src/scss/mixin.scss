@@ -1,3 +1,15 @@
+@import "variables.scss";
+
+@mixin clear
+{
+    &:after
+    {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    
+}
 @mixin customWidth($args)
 {
     @if $args == 1
@@ -9,5 +21,99 @@
     {
         width: 90%;
         margin: 0px 5%;
+    }
+}
+
+// Pop-up mixins
+
+@mixin diolog-shadow
+{
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(219, 219, 219, 1);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(219, 219, 219, 1);
+    box-shadow: 0px 0px 5px 1px rgba(219, 219, 219, 1);
+}
+@mixin pop-close-header
+{
+    @include clear;
+    @include customWidth(1);
+    height: 30px;
+    
+}
+@mixin pop-ups($args)
+{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 52, 54, .5);
+    z-index: 30;
+    .info-dialog-box
+    {
+        @include diolog-shadow;
+        background: #fff;
+        .pop-close-header
+        {
+            @include pop-close-header;
+            .pop-close-box
+            {
+                float: right;
+                text-align: right;
+                img
+                {
+                    width: 30%;
+                    cursor: pointer;
+                }
+            }
+        }
+        .pop-dialog-header
+        {
+            width: 100%;
+            .pop-header-icon
+            {
+                text-align: center;
+                img
+                {
+                    width: 20%;
+                }
+                h1
+                {
+                    font-size: 180%;
+                    color: $primaryDark;
+                    text-align: center;
+                }
+                p
+                {
+                    word-wrap: break-word;
+                }
+            }
+        }
+    }
+    @if $args == 1
+    {
+        .info-dialog-box
+        {
+            width: 50%;
+            height: 285px;
+            margin: 20% 25% 0px 25%;
+        }
+        .pop-close-footer
+        {
+            width: 100%;
+            height: 56px;
+            background: $secondaryGreen;
+            cursor: pointer;
+            h1
+            {
+                font-size: 150%;
+                color: #fff;
+                height: 56px;
+                text-align: center;
+                margin: 0px;
+                line-height: 56px;
+            }
+        }
     }
 }

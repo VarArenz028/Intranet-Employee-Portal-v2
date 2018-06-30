@@ -1,3 +1,44 @@
+<div class = "info-dialog" [hidden] = "popDiolog">
+
+    <div class = "container">
+
+        <div class = "info-dialog-box">
+
+            <div class = "pop-close-header">
+
+                <div class = "pop-close-box">
+
+                    <img src = "../../../assets/icons/close.png" (click) = "toggleDialog()" alt = "Close">
+                    
+                </div>
+
+            </div>
+
+            <div class = "pop-dialog-header">
+
+                <div class = "pop-header-icon">
+
+                    <img src = "../../../assets/icons/information.png" alt = "Information">
+
+                    <h1>Forgot password?</h1>
+
+                    <p class = "lead">
+                        Ask I.T. personel for assistant.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class = "pop-close-footer" (click) = "toggleDialog()">
+                <h1>Close</h1>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
 <section class = "container-fluid log-in-background">
 
   <div class = "container">
@@ -36,8 +77,8 @@
 
                     </div>
                     
-                    <div class = "for-pass-box mt-3">
-                        <span class = "for-pass pl-3">Forgot password?</span>
+                    <div class = "for-pass-box mt-5">
+                        <span class = "for-pass pl-3" (click) = "toggleDialog()">Forgot password?</span>
                     </div>
 
                   </form>
