@@ -1,0 +1,60 @@
+<section class = "container-fluid log-in-background">
+
+  <div class = "container">
+
+      <div class = "row">
+
+          <div class = "col-lg-5">
+              <div class = "login-box">
+
+                  <form class = "log-in-form" [formGroup] = "loginForm">
+
+                    <h1 class = "w90 pt-5" style = "font-size: 200%;">Log-in</h1>
+                    
+                    <div class = "login-inputs-box mt-5">
+
+                        <div class = "login-input-box mt-3">
+                          <mat-form-field class = "w-100">
+                              <input matInput formControlName = "username" placeholder = "Username">
+                          </mat-form-field>
+                        </div>
+
+                       <div class = "login-input-box mt-3">
+
+                          <mat-form-field class = "w-100">
+                              <input matInput formControlName = "password" placeholder = "Password" [type]="hide ? 'password' : 'text'">
+                              <mat-icon matSuffix (click) =" hide = !hide" style = "cursor: pointer;">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                          </mat-form-field>
+
+                       </div>
+
+                       <div class = "login-input-box mt-3">
+
+                          <button mat-raised-button color = "primary" style = "width: 60%;">Log-in</button>
+                          
+                       </div>
+
+                    </div>
+                    
+                    <div class = "for-pass-box mt-3">
+                        <span class = "for-pass pl-3">Forgot password?</span>
+                    </div>
+
+                  </form>
+
+              </div>
+          </div>
+
+          <div class = "col-lg-7">
+              <div class = "banner-title">
+                  <h1>
+                      Welcome to Sterling Global Call Center's Employee Portal
+                  </h1>
+              </div>
+          </div>
+
+      </div>
+
+  </div>
+
+</section>

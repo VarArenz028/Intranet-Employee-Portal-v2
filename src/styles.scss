@@ -1,1 +1,74 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "scss/variables.scss";
+@import "scss/mixin.scss";
+
+*
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 100%;
+}
+
+.log-in-background
+{
+    height: 735px;    
+    background-image: url(assets/imgs/login-page.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.login-box
+{
+    width: 95%;
+    height: 450px;
+    margin: 140px 2.5% 0px 2.5%;
+    background: #fff;
+}
+.w90
+{
+    @include customWidth(2);
+}
+.log-in-form
+{
+    @include customWidth(1);
+    height: 100%;
+    .login-inputs-box
+    {
+        width: 100%;
+        .login-input-box
+        {
+            @include customWidth(2);
+            text-align: center;
+            button
+            {
+                border-radius: 5%;
+            }
+        }
+    }
+    .for-pass-box
+    {
+        width: 100%;
+        .for-pass
+        {
+            font-weight: bold;
+            color: $secondaryGreen;
+            cursor: pointer;
+            &:hover
+            {
+                text-decoration: underline;
+            }
+        }
+    }
+     h1
+    {
+        color: $primaryDark;
+    }
+}
+.banner-title
+{
+    margin-top: 220px;
+    h1
+    {
+        font-size: 450%;
+        color: #fff;
+    }
+}

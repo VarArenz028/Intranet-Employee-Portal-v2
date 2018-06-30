@@ -1,0 +1,13 @@
+@mixin customWidth($args)
+{
+    @if $args == 1
+    {
+        width: 95%;
+        margin: 0px 2.5%;
+    }
+    @if $args == 2
+    {
+        width: 90%;
+        margin: 0px 5%;
+    }
+}
