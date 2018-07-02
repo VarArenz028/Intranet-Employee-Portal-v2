@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { AppRoutingModule, appRoutingComponents } from './app-routing.module';
+import { AppRoutingModule, appRoutingComponents, systemAdminRoutingComponents } from './app-routing.module';
 
 // angular materials setup
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,7 +12,8 @@ import { AppMaterialsModule } from './app-materials.module';
 @NgModule({
     declarations: [
         AppComponent,
-        appRoutingComponents
+        appRoutingComponents,
+        systemAdminRoutingComponents
     ],
     imports: [
         BrowserModule,

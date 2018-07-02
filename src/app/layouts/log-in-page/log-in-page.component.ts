@@ -21,6 +21,7 @@ export class LogInPageComponent implements OnInit {
       this.createLoginForm();
   }
   
+  // login form
   createLoginForm()
   {
       this.loginForm = this.formBuilder.group({
