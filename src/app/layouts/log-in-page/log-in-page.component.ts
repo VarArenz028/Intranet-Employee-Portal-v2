@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { fade } from '../../animations';
 
 @Component({
   selector: 'app-log-in-page',
   templateUrl: './log-in-page.component.html',
-  styleUrls: ['./log-in-page.component.scss']
+  styleUrls: ['./log-in-page.component.scss'],
+  animations: [fade]
 })
 export class LogInPageComponent implements OnInit {
 
   public loginForm : FormGroup;
   public hide : boolean = true;
-  public popDiolog : boolean = true;
+  public popProperty : string = 'hide';
+
   constructor(private formBuilder : FormBuilder) { }
 
   ngOnInit()
@@ -26,15 +29,16 @@ export class LogInPageComponent implements OnInit {
       });
   }
 
+  // toggles pop-up dialog
   toggleDialog()
   {
-      if(this.popDiolog == false)
+      if(this.popProperty === 'show')
       {
-          this.popDiolog = true;
+          this.popProperty = 'hide';
       }
-      else
+      else if(this.popProperty === 'hide')
       {
-        this.popDiolog = false;
+          this.popProperty = 'show';
       }
   }
   
