@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { fade } from '../../animations';
+import { Router } from '@angular/router';
+import { GlobalEventsManager } from '../../GlobalEventsManager';
 
 @Component({
   selector: 'app-log-in-page',
@@ -13,8 +15,8 @@ export class LogInPageComponent implements OnInit {
   public loginForm : FormGroup;
   public hide : boolean = true;
   public popProperty : string = 'hide';
-
-  constructor(private formBuilder : FormBuilder) { }
+  public isLogin : boolean = true;
+  constructor(private formBuilder : FormBuilder, private router : Router, private globalEventsManager : GlobalEventsManager) { }
 
   ngOnInit()
   {
@@ -43,5 +45,12 @@ export class LogInPageComponent implements OnInit {
       }
   }
   
+  loginTest()
+  {
+      this.globalEventsManager.showNavBar(true);
+      console.log(this.globalEventsManager.showNavBar(true));
+        
+    //   this.router.navigate(['system-admin/dashboard']);
+  }
 
 }
