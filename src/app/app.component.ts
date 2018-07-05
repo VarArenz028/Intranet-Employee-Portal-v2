@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  test()
+  {
+      window.location.href = '/system-admin/dashboard';
+  }
+
 }

@@ -8,7 +8,10 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 100%;
 }
-
+.single-page
+{
+    @include customWidth(3);
+}
 .log-in-background
 {
     height: 735px;    
@@ -58,7 +61,7 @@
             }
         }
     }
-     h1
+    h1
     {
         color: $primaryDark;
     }
@@ -75,4 +78,38 @@
 .info-dialog
 {
     @include pop-ups(1);
+}
+.left-side-nav
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 100vh;
+    background: $primaryDark;
+    .sa-nav-title
+    {
+        font-size: 100%;
+        color: #b2bec3;
+        text-align: center;
+    }
+    h2
+    {
+        font-size: 85%;
+        color: #fff;
+        text-align: center;
+    }
+    .sa-main-nav
+    {
+        @include mainNav(1);
+    }
+}
+.content
+{
+    width: calc(100% - 230px);
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
 }

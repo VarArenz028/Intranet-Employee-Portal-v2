@@ -1,18 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { AppRoutingModule, appRoutingComponents, systemAdminRoutingComponents } from './app-routing.module';
+import { AppRoutingModule,
+         appRoutingComponents, 
+         systemAdminRoutingComponents} from './app-routing.module';
 
 // angular materials setup
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppMaterialsModule } from './app-materials.module';
+import { GlobalEventsManager } from './GlobalEventsManager';
+import { LogInPageComponent } from './layouts/log-in-page/log-in-page.component';
+import { CampaignsComponent } from './system-admin/campaigns/campaigns.component';
+import { SideNavComponent } from './layouts/side-nav/side-nav.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        appRoutingComponents,
+        LogInPageComponent,
+        SideNavComponent,
         systemAdminRoutingComponents
     ],
     imports: [
@@ -23,7 +30,7 @@ import { AppMaterialsModule } from './app-materials.module';
         FormsModule,
         AppMaterialsModule
     ],
-    providers: [],
+    providers: [GlobalEventsManager],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
