@@ -14,6 +14,7 @@ import { GlobalEventsManager } from './GlobalEventsManager';
 import { LogInPageComponent } from './layouts/log-in-page/log-in-page.component';
 import { CampaignsComponent } from './system-admin/campaigns/campaigns.component';
 import { SideNavComponent } from './layouts/side-nav/side-nav.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import { SideNavComponent } from './layouts/side-nav/side-nav.component';
         AppRoutingModule,
         ReactiveFormsModule,
         FormsModule,
-        AppMaterialsModule
+        AppMaterialsModule,
+        FontAwesomeModule
     ],
     providers: [GlobalEventsManager],
     bootstrap: [AppComponent]
